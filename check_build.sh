@@ -29,5 +29,3 @@ git am resource-managers/pbs/*.patch        || quit "Unable to apply patch to sp
 # build
 export MAVEN_SKIP_RC=1
 build/mvn -q -DskipTests -Ppbs package      || quit "Unable to build spark with pbs"
-
-cleanup
