@@ -14,5 +14,5 @@ script:
 deploy:
     provider: script
     script: bash cd /tmp/spark/resource-managers/pbs && dev/deploy_docker.sh
-    on:
-        branch: master
+    #on:
+        #branch: master
