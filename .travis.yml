@@ -3,9 +3,8 @@ scala:
   - 2.12.7
 jdk: oraclejdk8
 
-branches:
-  only:
-    - master
+services:
+  - docker
 
 install: true
 
