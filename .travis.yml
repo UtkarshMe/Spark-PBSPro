@@ -11,3 +11,9 @@ install: true
 
 script:
   - travis_wait ./check_build.sh
+
+deploy:
+    provider: script
+    script: bash cd /tmp/spark/resource-managers/pbs && dev/deploy_docker.sh
+    on:
+        branch: master
