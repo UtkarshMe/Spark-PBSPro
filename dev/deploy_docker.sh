@@ -14,6 +14,8 @@ quit() {
 }
 
 # build image
+# we go to the spark root to build image because we want the spark project files
+# in the docker context while building.
 cd ../../
 sudo docker build -t $image:$tag -f resource-managers/pbs/Dockerfile . \
     || quit "Could not build docker image"
