@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# This script assumes:
+# - spark connector is at resource-managers/pbs/ inside spark project root.
+# - spark project is already compiled with pbs support.
+# - DOCKER_USERNAME, DOCKER_PASSWORD environment variables are set.
+
 image="spark-with-pbspro"
 tag="nightly"
 
