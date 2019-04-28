@@ -9,10 +9,10 @@ services:
 install: true
 
 script:
-  - travis_wait ./check_build.sh
+  - travis_wait sh dev/check_build.sh
 
 deploy:
     provider: script
-    script: bash cd /tmp/spark/resource-managers/pbs && dev/deploy_docker.sh
+    script: cd /tmp/spark/resource-managers/pbs && sh dev/deploy_docker.sh
     #on:
         #branch: master
