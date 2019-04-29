@@ -6,23 +6,15 @@
 # - DOCKER_USERNAME, DOCKER_PASSWORD environment variables are set.
 
 image="spark-with-pbspro"
-tag="nightly"
-
-quit() {
-  echo "$1"
-  exit 1
-}
+default_tag="nightly"
 
 # build image
 # we go to the spark root to build image because we want the spark project files
 # in the docker context while building.
 cd ../../
 sudo docker build -t $DOCKER_USERNAME/$image:$tag \
-    -f resource-managers/pbs/Dockerfile . \
-    || quit "Could not build docker image"
+    -f resource-managers/pbs/Dockerfile .
 
 # push to docker hub
-sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD \
-    || quit "Could not login to docker"
-sudo docker push $DOCKER_USERNAME/$image:$tag \
-    || quit "Could not push to docker hub"
+sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+sudo docker push $DOCKER_USERNAME/$image:$tag
