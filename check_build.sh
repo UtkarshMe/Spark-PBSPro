@@ -3,11 +3,6 @@
 spark_repo="https://github.com/apache/spark"
 pbs_repo="https://github.com/PBSPro/spark-pbspro-connector"
 
-cleanup() {
-  cd /
-  rm -rf /tmp/spark
-}
-
 quit() {
   echo "$1"
   cleanup
